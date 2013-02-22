@@ -16,21 +16,10 @@
 
 @implementation RSSItem
 
-@synthesize title,itemDescription,content,link,commentsLink,commentsFeed,commentsCount,pubDate,author,guid;
-
 -(NSArray *)imagesFromItemDescription
 {
     if (self.itemDescription) {
         return [self imagesFromHTMLString:self.itemDescription];
-    }
-    
-    return nil;
-}
-
--(NSArray *)imagesFromContent
-{
-    if (self.content) {
-        return [self imagesFromHTMLString:self.content];
     }
     
     return nil;

@@ -77,40 +77,40 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {    
-    if ([elementName isEqualToString:@"item"]) {
+    if ([elementName isEqualToString:@"item"])
+    {
         [items addObject:currentItem];
     }
-    if (currentItem != nil && tmpString != nil) {
-        
-        if ([elementName isEqualToString:@"title"]) {
+    
+    if (currentItem != nil && tmpString != nil)
+    {
+        if ([elementName isEqualToString:@"title"])
+        {
             [currentItem setTitle:tmpString];
         }
         
-        if ([elementName isEqualToString:@"description"]) {
+        if ([elementName isEqualToString:@"description"])
+        {
             [currentItem setItemDescription:tmpString];
         }
         
-        if ([elementName isEqualToString:@"content:encoded"]) {
-            [currentItem setContent:tmpString];
-        }
-        
-        if ([elementName isEqualToString:@"link"]) {
+        if ([elementName isEqualToString:@"link"])
+        {
             [currentItem setLink:[NSURL URLWithString:tmpString]];
         }
-        
-        if ([elementName isEqualToString:@"comments"]) {
-            [currentItem setCommentsLink:[NSURL URLWithString:tmpString]];
+
+        if ([elementName isEqualToString:@"author"])
+        {
+            [currentItem setAuthor:tmpString];
         }
         
-        if ([elementName isEqualToString:@"wfw:commentRss"]) {
-            [currentItem setCommentsFeed:[NSURL URLWithString:tmpString]];
+        if ([elementName isEqualToString:@"category"])
+        {
+            [currentItem setCategory:tmpString];
         }
         
-        if ([elementName isEqualToString:@"slash:comments"]) {
-            [currentItem setCommentsCount:[NSNumber numberWithInt:[tmpString intValue]]];
-        }
-        
-        if ([elementName isEqualToString:@"pubDate"]) {
+        if ([elementName isEqualToString:@"pubDate"])
+        {
             NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 
             NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"en_EN"];
@@ -121,16 +121,14 @@
             [currentItem setPubDate:[formatter dateFromString:tmpString]];
         }
 
-        if ([elementName isEqualToString:@"dc:creator"]) {
-            [currentItem setAuthor:tmpString];
-        }
-        
-        if ([elementName isEqualToString:@"guid"]) {
+        if ([elementName isEqualToString:@"guid"])
+        {
             [currentItem setGuid:tmpString];
         }
     }
     
-    if ([elementName isEqualToString:@"rss"]) {
+    if ([elementName isEqualToString:@"rss"])
+    {
         block(items);
     }
     

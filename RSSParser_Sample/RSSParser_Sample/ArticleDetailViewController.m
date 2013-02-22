@@ -8,6 +8,8 @@
 
 #import "ArticleDetailViewController.h"
 
+#import "GTMNSString+HTML.h"
+
 @implementation ArticleDetailViewController
 @synthesize item;
 
@@ -36,11 +38,14 @@
     // Do any additional setup after loading the view from its nib.
     
     [self setTitle:item.title];
-    [articleWebView loadHTMLString:item.itemDescription baseURL:nil];
+    //self.myTextView.text = [self.item.itemDescription gtm_stringByUnescapingFromHTML];
+    
+    self.myTextView.text = [self.item.link absoluteString];
 }
 
 - (void)viewDidUnload
 {
+    [self setMyTextView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

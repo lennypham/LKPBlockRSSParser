@@ -41,6 +41,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString *staffordRSS    = @"http://www.staffordsheriff.com/apps/public/news/rss/";
+    NSString *whiteHouseGov  = @"http://www.whitehouse.gov/feed/blog/white-house";
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,7 +53,8 @@
     
     [self setTitle:@"Loading..."];
     
-    NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://blog.lelevier.fr/rss"]];
+    NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:staffordRSS]];
+    
     [RSSParser parseRSSFeedForRequest:req success:^(NSArray *feedItems) {
         [self setTitle:@"Blog"];
         [self setDataSource:feedItems];

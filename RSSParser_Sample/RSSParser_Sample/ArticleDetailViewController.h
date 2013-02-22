@@ -10,10 +10,8 @@
 #import "RSSItem.h"
 
 @interface ArticleDetailViewController : UIViewController
-{
- IBOutlet UIWebView *articleWebView;   
-}
 
 @property (assign,nonatomic) RSSItem *item;
+@property (weak, nonatomic) IBOutlet UITextView *myTextView;
 
 @end

@@ -30,6 +30,7 @@
 		118543F014E9ACD2001761CB /* ArticlesListeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118543EE14E9ACD2001761CB /* ArticlesListeTableViewController.xib */; };
 		118543F414E9AFE0001761CB /* ArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118543F214E9AFE0001761CB /* ArticleDetailViewController.m */; };
 		118543F514E9AFE0001761CB /* ArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118543F314E9AFE0001761CB /* ArticleDetailViewController.xib */; };
+		98C19EC516D80BED00E0D65A /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C19EC416D80BED00E0D65A /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DA0619AD16A3127300DB4BB8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0619AC16A3127300DB4BB8 /* SystemConfiguration.framework */; };
 		DA0619AF16A312E200DB4BB8 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0619AE16A312E200DB4BB8 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,8 @@
 		118543F114E9AFE0001761CB /* ArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailViewController.h; sourceTree = "<group>"; };
 		118543F214E9AFE0001761CB /* ArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailViewController.m; sourceTree = "<group>"; };
 		118543F314E9AFE0001761CB /* ArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleDetailViewController.xib; sourceTree = "<group>"; };
+		98C19EC316D80BED00E0D65A /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		98C19EC416D80BED00E0D65A /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		DA0619AC16A3127300DB4BB8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DA0619AE16A312E200DB4BB8 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -102,6 +105,7 @@
 		110A8A7814E9A30A0013AC07 = {
 			isa = PBXGroup;
 			children = (
+				98C19EC616D80DB100E0D65A /* Google Toolbox for Mac */,
 				DA0619AE16A312E200DB4BB8 /* MobileCoreServices.framework */,
 				DA0619AC16A3127300DB4BB8 /* SystemConfiguration.framework */,
 				1133748E169ACF5A003E2CE9 /* README.md */,
@@ -210,6 +214,15 @@
 			path = AFNetworking/AFNetworking;
 			sourceTree = "<group>";
 		};
+		98C19EC616D80DB100E0D65A /* Google Toolbox for Mac */ = {
+			isa = PBXGroup;
+			children = (
+				98C19EC316D80BED00E0D65A /* GTMNSString+HTML.h */,
+				98C19EC416D80BED00E0D65A /* GTMNSString+HTML.m */,
+			);
+			name = "Google Toolbox for Mac";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,6 +303,7 @@
 				118543E714E9ACA0001761CB /* UIImageView+AFNetworking.m in Sources */,
 				118543EF14E9ACD2001761CB /* ArticlesListeTableViewController.m in Sources */,
 				118543F414E9AFE0001761CB /* ArticleDetailViewController.m in Sources */,
+				98C19EC516D80BED00E0D65A /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
