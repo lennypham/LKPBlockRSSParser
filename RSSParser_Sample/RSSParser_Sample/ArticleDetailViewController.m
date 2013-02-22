@@ -38,9 +38,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self setTitle:item.title];
-    //self.myTextView.text = [self.item.itemDescription gtm_stringByUnescapingFromHTML];
-    
-    self.myTextView.text = [self.item.link absoluteString];
+    self.myTextView.text = [self.item.itemDescription gtm_stringByUnescapingFromHTML];
 }
 
 - (void)viewDidUnload
