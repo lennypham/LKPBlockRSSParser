@@ -48,4 +48,22 @@
     return [NSArray arrayWithArray:imagesURLStringArray];
 }
 
+#pragma mark - Instance Methods
+- (NSString *)formattedPublishDate
+{
+    NSString *theFormattedDate = nil;
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    NSLocale *local = [[NSLocale alloc] initWithLocaleIdentifier:@"en_EN"];
+    
+    [formatter setLocale:local];
+    
+    [formatter setDateFormat:@"MM - dd - yyyy"];
+    
+    theFormattedDate = [formatter stringFromDate:self.pubDate];
+    
+    return theFormattedDate;
+}
+
 @end

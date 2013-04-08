@@ -18,6 +18,8 @@
 @property (strong,nonatomic) NSString *guid;
 @property (strong,nonatomic) NSDate *pubDate;
 
--(NSArray *)imagesFromItemDescription;
+- (NSArray *)imagesFromItemDescription;
+
+- (NSString *)formattedPublishDate;
 
 @end
